@@ -8,6 +8,7 @@ use App\Http\Controllers\PaidcourseController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CustomerController;
 
 
 /*
@@ -37,4 +38,5 @@ Route::post('/student/store',[StudentController::class,'store'])->name('student.
 Route::get('/book/list',[BookController::class,'list'])->name('book.list');
 Route::get('/book/form',[BookController::class,'createform']);
 Route::post('/book/store',[BookController::class,'store'])->name('book.store');
+Route::get('/customer/form',[CustomerController::class,'form'])->name('customer.form');
 

@@ -4,32 +4,41 @@
 <a href="{{url('/teacher/form')}}" class='btn btn-primary'>Add Teacher</a>
 <table class="table">
   <thead>
-    <tr>
+  <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Teacher_Name</th>
+      <th scope="col">Taken Course</th>
+      <th scope="col">Taken Student</th>
+      <th scope="col">Teacher_image</th>
+      <th scope="col">Teacher_Description</th>
+      <th scope="col">Teacher_status</th>
+    
+
     </tr>
   </thead>
   <tbody>
+    @foreach($teachers as $key=>$teacher)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <th scope="row">{{$key+1}}</th>
+    
+      <td>{{$teacher->name}}</td>
+      <td>{{$teacher->paidcourse_id}}</td>
+      <td>{{$teacher->student_id}}</td>
+      <td>image here</td>
+      <td>{{$teachers->status}}</td>
+      <td>
+        <a class="btn btn-success" href="">View</a>
+        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-success" href="">Edit</a>
+
+      </td>
+      
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
+    
   </tbody>
 </table>
+
+
 @endsection

@@ -1,14 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Unpaidcourse;
 
 use Illuminate\Http\Request;
 
 class UnpaidcourseController extends Controller
 {
     public function list()
+
     {
-        return view('admin.pages.unpaidcourse.list');
+
+        $unpaidcourses=Unpaidcourse::all();
+        return view('admin.pages.unpaidcourse.list',compact('unpaidcourses'));
     }
 
 public function createform(){
@@ -20,7 +24,7 @@ public function store(Request $request){
 
     Unpaidcourse::create([
         'name'=>$request->unpaidcourse_name,
-        'description'=>$request->unpaidcourse_description,
+        'description'=>$request->unpaidcourse_description
     ]);
 
     return redirect()->back();

@@ -37,6 +37,12 @@
                   Books
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/customer/form">
+                  <span data-feather="layers"></span>
+                  Customer
+                </a>
+              </li>
               
             </ul>
 

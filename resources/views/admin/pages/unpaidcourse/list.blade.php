@@ -5,31 +5,23 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">id</th>
+      <th scope="col">Unpaidcourse name</th>
+      <th scope="col">Description</th>
+      
     </tr>
   </thead>
   <tbody>
+    @foreach($unpaidcourses as $unpaidcourse)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{ $unpaidcourse->id }}</th>
+      <td>{{$unpaidcourse->name}}</td>
+      <td>{{$unpaidcourse->description}}</td>
+     <td> <a class="btn btn-success" href="">Edit</a>
+        <a class="btn btn-danger" href="">Delete</a>
+</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 @endsection

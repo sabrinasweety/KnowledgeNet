@@ -6,30 +6,38 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Student_Name</th>
+      <th scope="col">Taken Course</th>
+      <th scope="col">Taken Teacher</th>
+      <th scope="col">Student_image</th>
+      <th scope="col">Student_Description</th>
+      <th scope="col">Student_status</th>
+    
+
     </tr>
   </thead>
   <tbody>
+    @foreach($students as $key=>$student)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <th scope="row">{{$key+1}}</th>
+    
+      <td>{{$student->name}}</td>
+      <td>{{$student->paidcourse_id}}</td>
+      <td>{{$student->teacher_id}}</td>
+      <td>image here</td>
+      <td>{{$student->status}}</td>
+      <td>
+        <a class="btn btn-success" href="">View</a>
+        <a class="btn btn-success" href="">Delete</a>
+        <a class="btn btn-success" href="">Edit</a>
+
+      </td>
+      
+      
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
+    
   </tbody>
 </table>
+
 @endsection
