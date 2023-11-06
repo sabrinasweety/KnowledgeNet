@@ -1,7 +1,8 @@
 <?php
 
 
-use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UnpaidcourseController;
 use App\Http\Controllers\PaidcourseController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CustomerController;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -21,8 +23,13 @@ use App\Http\Controllers\CustomerController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/admin/login',[UserController::class,'loginForm'])->name('admin.login');
+Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin.login.post');
 
-Route::get('/', [HomeController::class,'home']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
+
+Route::get('/', [HomeController::class,'home'])->name('dashboard');
 Route::get('/unpaid/list',[UnpaidcourseController::class,'list'])->name('unpaid.list');
 Route::get('/unpaid/form',[UnpaidcourseController::class,'createform']);
 Route::post('/unpaid/store',[UnpaidcourseController::class,'store'])->name('unpaid.store');
@@ -40,3 +47,4 @@ Route::get('/book/form',[BookController::class,'createform']);
 Route::post('/book/store',[BookController::class,'store'])->name('book.store');
 Route::get('/customer/form',[CustomerController::class,'form'])->name('customer.form');
 
+});

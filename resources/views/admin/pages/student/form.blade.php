@@ -5,28 +5,23 @@
 
 <div class="form-group">
     <label for="">Student Name</label>
-    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="name">
+    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="student_name">
     
-   
+    @error('student_name')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
   </div>
   <div class="form-group">
     <label for="">Select Paidcourse:</label>
-   <select class="form-control" name="paidcourse_id" id="">
-   @foreach ($paidcourses as $paidcourse)
-    <option value="{{$paidcourse->id}}">{{$paidcourse->name}}</option>
-    @endforeach
+    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="paidcourse_id">
+   
 
-</select>
    </div>
    <div class="form-group">
     <label for="">Select Teacher:</label>
-   <select class="form-control" name="teacher_id" id="">
-
-    @foreach ($teachers as $teacher )
-    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-    @endforeach
+    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="teacher_id">
+    
    
-   </select>
   </div>
 
   <div class="form-group">
@@ -37,6 +32,10 @@
   <div class="form-group">
     <label for="">Description</label>
     <textarea class="form-control" class="form-control" id="" name="student_description" cols="10" rows="5"></textarea>
+    @error('student_description')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
   </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>

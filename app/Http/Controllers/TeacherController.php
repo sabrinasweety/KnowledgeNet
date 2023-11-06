@@ -4,21 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
-use App\Models\Student;
-use App\Models\Paidcourse;
+
 
 
 class TeacherController extends Controller
 {
     public function list(){
-        $teachers=Teacher::all();
+        $teachers=Teacher::paginate(2);
         return view('admin.pages.teacher.list',compact('teachers'));
      
     }
     public function createform(){
-        $paidcourses=Paidcourse::all();
-        $students=Student::all();
-        return view('admin.pages.teacher.form',compact('paidcourses','students'));
+        
+        return view('admin.pages.teacher.form');
     }
     
     public function store(Request $request){
@@ -27,9 +25,8 @@ class TeacherController extends Controller
 
 
         
-        'paidcourse_id'=>$request->paidcourse_id,
-        'student_id'=>$request->student_id,
-        'name'=>$request->teacher_name,
+        
+        'name'=>$request->name,
         'description'=>$request->teacher_description
 
     ]);

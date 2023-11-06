@@ -9,29 +9,11 @@
     
    
   </div>
-  <div class="form-group">
-    <label for="">Select Paidcourse:</label>
-   <select class="form-control" name="paidcourse_id" id="">
-   @foreach ($paidcourses as $paidcourse)
-    <option value="{{$paidcourse->id}}">{{$paidcourse->name}}</option>
-    @endforeach
-
-</select>
-   </div>
-   <div class="form-group">
-    <label for="">Select student:</label>
-   <select class="form-control" name="student_id" id="">
-
-    @foreach ($students as $student )
-    <option value="{{$student->id}}">{{$student->name}}</option>
-    @endforeach
-   
-   </select>
-  </div>
+ 
 
   <div class="form-group">
-    <label for="">Upload Image: </label>
-    <input type="file" class="form-control">
+    <label for="">Upload logo: </label>
+    <input type="file" class="form-control" placeholder="logo">
   </div>
 
   <div class="form-group">

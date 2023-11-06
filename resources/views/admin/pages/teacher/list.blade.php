@@ -6,12 +6,10 @@
   <thead>
   <tr>
       <th scope="col">#</th>
+      
       <th scope="col">Teacher_Name</th>
-      <th scope="col">Taken Course</th>
-      <th scope="col">Taken Student</th>
-      <th scope="col">Teacher_image</th>
-      <th scope="col">Teacher_Description</th>
       <th scope="col">Teacher_status</th>
+      <th scope="col">Action</th>
     
 
     </tr>
@@ -19,15 +17,11 @@
   <tbody>
     @foreach($teachers as $key=>$teacher)
     <tr>
-    <th scope="row">{{$key+1}}</th>
-    
+    <th scope="row">{{ $teacher->id }}</th>
       <td>{{$teacher->name}}</td>
-      <td>{{$teacher->paidcourse_id}}</td>
-      <td>{{$teacher->student_id}}</td>
-      <td>image here</td>
-      <td>{{$teachers->status}}</td>
+      <td>{{$teacher->status}}</td>
       <td>
-        <a class="btn btn-success" href="">View</a>
+          <a class="btn btn-success" href="">View</a>
         <a class="btn btn-success" href="">Delete</a>
         <a class="btn btn-success" href="">Edit</a>
 
@@ -39,6 +33,7 @@
     
   </tbody>
 </table>
+{{$teachers->links()}}
 
 
 @endsection

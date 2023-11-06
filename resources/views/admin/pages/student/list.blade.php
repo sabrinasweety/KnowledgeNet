@@ -22,8 +22,8 @@
     <th scope="row">{{$key+1}}</th>
     
       <td>{{$student->name}}</td>
-      <td>{{$student->paidcourse_id}}</td>
-      <td>{{$student->teacher_id}}</td>
+      <td>{{$student->paidcourse->name}}</td>
+      <td>{{$student->teacher->name}}</td>
       <td>image here</td>
       <td>{{$student->status}}</td>
       <td>
@@ -39,5 +39,6 @@
     
   </tbody>
 </table>
+{{$students->links()}}
 
 @endsection
