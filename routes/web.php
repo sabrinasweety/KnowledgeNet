@@ -3,12 +3,12 @@
 
 
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UnpaidcourseController;
-use App\Http\Controllers\PaidcourseController;
-use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\Backend\HomeController;
+use App\Http\Controllers\Backend\UnpaidcourseController;
+use App\Http\Controllers\Backend\PaidcourseController;
+use App\Http\Controllers\Backend\TeacherController;
+use App\Http\Controllers\Backend\StudentController;
+use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +23,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/admin/login',[UserController::class,'loginForm'])->name('admin.login');
+Route::group(['prefix'=>'admin'],function(){
+Route::get('/login',[UserController::class,'loginForm'])->name('admin.login');
 Route::post('/login-form-post',[UserController::class,'loginPost'])->name('admin.login.post');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/admin/logout',[UserController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout',[UserController::class, 'logout'])->name('admin.logout');
 
 Route::get('/', [HomeController::class,'home'])->name('dashboard');
 Route::get('/unpaid/list',[UnpaidcourseController::class,'list'])->name('unpaid.list');
@@ -49,4 +50,5 @@ Route::get('/users/list',[UserController::class,'list'])->name('users.list');
 Route::get('/users/form',[UserController::class,'form'])->name('users.form');
 Route::post('/users/store',[UserController::class,'store'])->name('users.store');
 
+});
 });
