@@ -5,7 +5,8 @@
          
 		<li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{url('/')}}">
-              <span data-feather="home" class="align-text-bottom"></span>
+            <span data-feather="file"></span>
+              
               Dashboard
             </a>
           </li>
@@ -29,7 +30,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('student.list')}}">
-                  <span data-feather="bar-chart-2"></span>
+                <span data-feather="users"></span>
                   Students
                 </a>
               </li>
@@ -40,11 +41,18 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/customer/form">
+                <a class="nav-link" href="{{route('users.list')}}">
                   <span data-feather="layers"></span>
-                  Customer
+                  Admin
                 </a>
               </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{{route('book.list')}}">
+                  <span data-feather="layers"></span>
+                 Role
+                </a>
+              </li>
+              
               
             </ul>
 

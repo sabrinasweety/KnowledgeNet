@@ -9,7 +9,7 @@ use App\Http\Controllers\PaidcourseController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -45,6 +45,8 @@ Route::post('/student/store',[StudentController::class,'store'])->name('student.
 Route::get('/book/list',[BookController::class,'list'])->name('book.list');
 Route::get('/book/form',[BookController::class,'createform']);
 Route::post('/book/store',[BookController::class,'store'])->name('book.store');
-Route::get('/customer/form',[CustomerController::class,'form'])->name('customer.form');
+Route::get('/users/list',[UserController::class,'list'])->name('users.list');
+Route::get('/users/form',[UserController::class,'form'])->name('users.form');
+Route::post('/users/store',[UserController::class,'store'])->name('users.store');
 
 });
