@@ -12,13 +12,13 @@
     @enderror
   </div>
   <div class="form-group">
-    <label for="">Select Paidcourse:</label>
+    <label for="">Select Paidcourse id:</label>
     <input type="text" class="form-control" id=""  placeholder="Enter Name" name="paidcourse_id">
    
 
    </div>
    <div class="form-group">
-    <label for="">Select Teacher:</label>
+    <label for="">Select Teacher id:</label>
     <input type="text" class="form-control" id=""  placeholder="Enter Name" name="teacher_id">
     
    

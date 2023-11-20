@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    @notifyCss
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -19,6 +20,7 @@
   </head>
 
   <body>
+  
     @include('admin.partial.header')
     <div class="container-fluid">
       <div class="row">
@@ -26,6 +28,7 @@
               
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        @include('notify::components.notify')
           @yield('content')
 
           </main>
@@ -39,14 +42,15 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-
+   
+    @notifyJs
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
 
-    <!-- Graphs -->
+
     
   </body>
 </html>

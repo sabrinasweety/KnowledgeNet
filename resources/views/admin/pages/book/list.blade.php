@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Books</h1>
-<a href="{{url('/book/form')}}" class='btn btn-primary'>Add Book</a>
+<a href="{{route('book.form')}}" class='btn btn-primary'>Add Book</a>
 <table class="table">
   <thead>
     <tr>

@@ -32,7 +32,7 @@ public function store(Request $request){
 
 
 
-//dd($request->all());
+
 Book::create([
 
 'name'=>$request->book_name,

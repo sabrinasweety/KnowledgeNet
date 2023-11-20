@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Teachers</h1>
-<a href="{{url('/teacher/form')}}" class='btn btn-primary'>Add Teacher</a>
+<a href="{{route('teacher.form')}}" class='btn btn-primary'>Add Teacher</a>
 <table class="table">
   <thead>
   <tr>
@@ -17,13 +17,14 @@
   <tbody>
     @foreach($teachers as $key=>$teacher)
     <tr>
-    <th scope="row">{{ $teacher->id }}</th>
+    <th scope="row">{{$key+1}}</th>
+    
       <td>{{$teacher->name}}</td>
       <td>{{$teacher->status}}</td>
       <td>
           <a class="btn btn-success" href="">View</a>
-        <a class="btn btn-success" href="">Delete</a>
-        <a class="btn btn-success" href="">Edit</a>
+        <a class="btn btn-success" href="{{route('teacher.delete',$teacher->id)}}">Delete</a>
+        <a class="btn btn-success" href="{{route('teacher.edit',$teacher->id)}}">Edit</a>
 
       </td>
       

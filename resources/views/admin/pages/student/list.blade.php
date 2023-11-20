@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Students</h1>
-<a href="{{url('/student/form')}}" class='btn btn-primary'>Add Student</a>
+<a href="{{route('student.form')}}" class='btn btn-primary'>Add Student</a>
 <table class="table">
   <thead>
     <tr>
@@ -23,7 +23,7 @@
     
       <td>{{$student->name}}</td>
       <td>{{$student->paidcourse->name}}</td>
-      <td>{{$student->teacher->name}}</td>
+      <td>{{$student->teacher_id}}</td>
       <td>image here</td>
       <td>{{$student->status}}</td>
       <td>

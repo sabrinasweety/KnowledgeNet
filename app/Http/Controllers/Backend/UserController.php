@@ -15,6 +15,9 @@ class UserController extends Controller
     }
     public function loginPost(Request $request)
     {
+       
+       
+       
         $validate=Validator::make($request->all(),[
         
             'email'=>'required|email',

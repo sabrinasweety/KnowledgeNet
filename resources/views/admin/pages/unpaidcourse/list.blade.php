@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>UnpaidCourse List</h1>
-<a href="{{url('/unpaid/form')}}" class="btn btn-success">Create Course</a>
+<a href="{{route('unpaidcourse.form')}}" class="btn btn-success">Create Course</a>
 <table class="table">
   <thead>
     <tr>

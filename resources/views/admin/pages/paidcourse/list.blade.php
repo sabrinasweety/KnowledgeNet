@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 <h1>Paidcourse</h1>
-<a href="{{url('/paid/form')}}" class='btn btn-primary'>Create paidcourse</a>
+<a href="{{route('paidcourse.form')}}" class='btn btn-primary'>Create paidcourse</a>
 <table class="table">
   <thead>
     <tr>
