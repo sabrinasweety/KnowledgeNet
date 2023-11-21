@@ -31,7 +31,13 @@ Route::post('/registration/store',[CustomerController::class,'store'])->name('cu
 Route::get('/login',[CustomerController::class,'login'])->name('customer.login');
 Route::post('/dologin',[CustomerController::class,'dologin'])->name('customer.dologin');
 Route::group(['middleware'=>'auth'],function(){
-Route::get('/logout',[CustomerController::class,'logout'])->name('customer.logout');});
+    
+Route::get('/profile',[CustomerController::class,'profileview'])->name('profile.view');
+Route::get('/profile-edit',[CustomerController::class,'profileedit'])->name('profile.edit');
+Route::put('/profile-update',[CustomerController::class,'profileupdate'])->name('profile.update');
+Route::get('/logout',[CustomerController::class,'logout'])->name('customer.logout');
+
+});
 
 
 
