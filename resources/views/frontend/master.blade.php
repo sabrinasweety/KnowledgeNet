@@ -1,103 +1,167 @@
-<!-- /*
-* Template Name: Learner
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  @notifyCss
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+    <meta charset="utf-8">
+    @notifyCss
+    <title>KnowledgeNet- Online Education Website </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Favicon -->
+    <link href="/uploads/img/favicon.ico" rel="icon">
 
-  <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
 
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/animate.min.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/fonts/icomoon/style.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/aos.css">
-  <link rel="stylesheet" href="https://themewagon.github.io/learner/css/style.css">
-
-  <title>Learner Free Bootstrap Template by Untree.co</title>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/uploads/css/style.css" rel="stylesheet">
 </head>
 
 <body>
+@include('frontend.partials.header') 
 
-  <div class="site-mobile-menu">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close">
-        <span class="icofont-close js-menu-toggle"></span>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+        <div class="container text-center my-5 py-5">
+            <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
+            <h1 class="text-white display-1 mb-5">Education Courses</h1>
+            <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+                <div class="input-group">
+                    
+                    <form action="{{route('paidcourse.search')}}" method="get">
+                    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <select class="custom-select" name="search_type">
+                <option value="book">Search Books</option>
+                <option value="course">Search Courses</option>
+            </select>
+        </div>
+        <input type="text" class="form-control" placeholder="Enter your query" name="query">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
     </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
-
-
-  @include('frontend.partials.header')
-
-  <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Learning</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">EEEE</p>
+                    </form>
+                    
                 </div>
             </div>
-        </header>
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
+        </div>
+    </div>
+    <!-- Header End -->
+    @include('notify::components.notify')
 
-            @include('notify::components.notify')
-            @yield('content')
-            
-
-            </div>
-        </section>
-                
+    
 
 
-
-                    
-      
-
-
-
- 
+<!-- About Start -->
+<div class="container-fluid py-5">
+       
+    <!-- About End -->
 
 
- 
-           
-  @include('frontend.partials.footer')       
+    <!-- Feature Start -->
+    
+    <!-- Feature Start -->
 
+
+    <!-- Courses Start -->
+    
+        @yield('content')
+        
+          
+    <!-- Courses End -->
+
+
+    <!-- Team Start -->
+    
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    
+    <!-- Testimonial Start -->
+
+
+    <!-- Contact Start -->
    
-   
+    <!-- Contact End -->
 
-    <script src="https://themewagon.github.io/learner/js/jquery-3.4.1.min.js"></script>
-    <script src="https://themewagon.github.io/learner/js/popper.min.js"></script>
-    <script src="https://themewagon.github.io/learner/js/bootstrap.min.js"></script>
-    <script src="https://themewagon.github.io/learner/js/owl.carousel.min.js"></script>
-    <script src="https://themewagon.github.io/learner/js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/custom.js"></script>
+
+
+    
+    
+       
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    @include('frontend.partials.footer')
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/counterup/counterup.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!--Template Javascript -->
+     <script src="/uploads/js/main.js"></script>
+
+    <script>
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+            tag.parentNode.insertBefore(script, tag);
+        };
+
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+</script>
     @notifyJs
+</body>
 
-
-  </body>
-
-  </html>
+</html>

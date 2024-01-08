@@ -1,8 +1,8 @@
 @extends('frontend.master')
 
 
-@section('content')
 
+@section('content')
 
 
 <form action="{{route('customer.store')}}"method='post'>

@@ -1,6 +1,7 @@
 @extends('frontend.master')
 
 
+
 @section('content')
 
 
@@ -69,5 +70,6 @@
                   </div>
                 </div>
               </div>
-
               @endsection
+
+              

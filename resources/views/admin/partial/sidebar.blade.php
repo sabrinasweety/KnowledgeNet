@@ -46,10 +46,10 @@
                   Admin
                 </a>
               </li>
-             <li class="nav-item">
-                <a class="nav-link" href="{{route('book.list')}}">
-                  <span data-feather="layers"></span>
-                 Role
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('enroll.list')}}">
+                <span data-feather="users"></span>
+                  Enrolled Students
                 </a>
               </li>
               

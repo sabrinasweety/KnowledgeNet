@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-<form action="{{route('book.store')}}" method="post">
+<form action="{{route('book.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 
 <div class="form-group">
@@ -13,7 +13,12 @@
   </div>
   <div class="form-group">
     <label for="">Logo</label>
-    <input type="file" class="form-control" id=""  placeholder="Enter Name" name="book_logo">
+    <input type="file" class="form-control" id=""  placeholder="Enter logo" name="logo">
+   
+  </div>
+  <div class="form-group">
+    <label for="">Book Pdf</label>
+    <input type="file" class="form-control" id=""  placeholder="Enter book pdf" name="pdf">
    
   </div>
   <div class="form-group">
@@ -38,8 +43,15 @@
    
   </div>
   <div class="form-group">
+    <label for="">Price</label>
+    <input type="text" class="form-control" id=""  placeholder="Enter price" name="book_price">
+   
+
+  </div>
+  
+  <div class="form-group">
     <label for="">Book Description</label>
-    <textarea class="form-control" class="form-control" id="" input="book_description" cols="10" rows="5"></textarea>
+    <textarea class="form-control" class="form-control" id="" input name="book_description" cols="10" rows="5"></textarea>
 </div>
   
  

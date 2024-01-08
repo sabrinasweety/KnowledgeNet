@@ -7,10 +7,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Student_Name</th>
-      <th scope="col">Taken Course</th>
-      <th scope="col">Taken Teacher</th>
+     
       <th scope="col">Student_image</th>
-      <th scope="col">Student_Description</th>
+      
       <th scope="col">Student_status</th>
     
 
@@ -22,8 +21,7 @@
     <th scope="row">{{$key+1}}</th>
     
       <td>{{$student->name}}</td>
-      <td>{{$student->paidcourse->name}}</td>
-      <td>{{$student->teacher_id}}</td>
+      
       <td>image here</td>
       <td>{{$student->status}}</td>
       <td>
@@ -39,6 +37,6 @@
     
   </tbody>
 </table>
-{{$students->links()}}
+
 
 @endsection

@@ -14,21 +14,17 @@
     <label for="exampleInputPassword1">Name</label>
     <input value="{{auth()->user()->name}}"required type="Edit Name" class="form-control" id="" placeholder="name" name='name'>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Role</label>
-    <input value="{{auth()->user()->role}}" required type="role" class="form-control" id="" placeholder="role" name='role'>
-  </div>
+  
   
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-
-
-
-
-
-
-
-
 @endsection
+
+
+
+
+
+
+
+

@@ -2,203 +2,415 @@
 
 
 @section('content')
+<!-- About Start -->
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="/uploads/img/about.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
+                        <h1 class="display-4">First Choice For Online Education Anywhere</h1>
+                    </div>
+                    <p>Welcome to our online education platform, where learning knows no bounds! Our website is dedicated to providing a seamless and enriching educational experience for students, educators, and knowledge seekers alike.
+
+At our core, we prioritize accessibility and convenience. Students can easily register and enroll in a diverse range of online courses tailored to their interests and aspirations. Administrators play a vital role, ensuring a quality educational experience by carefully adding proficient teachers to guide and support the learning journey.
+
+Our integrated bookstore offers a plethora of academic resources available for purchase. Once acquired, these resources are readily accessible for online reading, fostering a dynamic learning environment that encourages continuous growth and exploration.
+
+Join us in this educational revolution, where boundaries dissolve, and learning becomes a limitless endeavor. Together, let's embark on a journey of discovery, empowerment, and educational excellence.</p>
+                    <div class="row pt-3 mx-0">
+                        <div class="col-3 px-0">
+                            <div class="bg-success text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">123</h1>
+                                <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-primary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-secondary text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">123</h1>
+                                <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
+                            </div>
+                        </div>
+                        <div class="col-3 px-0">
+                            <div class="bg-warning text-center p-4">
+                                <h1 class="text-white" data-toggle="counter-up">1234</h1>
+                                <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-image" style="margin: 90px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
+                        <h1 class="display-4">Why You Should Start Learning with Us?</h1>
+                    </div>
+                    <p class="mb-4 pb-2">Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet.</p>
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-primary mr-4">
+                            <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Skilled Instructors</h4>
+                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="btn-icon bg-secondary mr-4">
+                            <i class="fa fa-2x fa-certificate text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>International Certificate</h4>
+                            <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="btn-icon bg-warning mr-4">
+                            <i class="fa fa-2x fa-book-reader text-white"></i>
+                        </div>
+                        <div class="mt-n1">
+                            <h4>Online Classes</h4>
+                            <p class="m-0">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="/uploads/img/feature.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature Start -->
+
+
+    <!-- Courses Start -->
+    <div class="container-fluid px-0 py-5">
+    
+        <div class="row mx-0 justify-content-center pt-5">
+            <div class="col-lg-6">
+                <div class="section-title text-center position-relative mb-4">
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
+                    <h1 class="display-4">Checkout New Releases Of Our Courses</h1>
+                </div>
+            </div>
+        </div>
+       
+        <div class="owl-carousel courses-carousel">
+            @foreach ($paidcourses as $paidcourse)
+        
+        
+            <div class="courses-item position-relative">
+                <img class="img-fluid" src="{{url('/uploads/'.$paidcourse->image)}}"alt="">
+                <div class="courses-text">
+                    <h4 class="text-center text-white px-3">{{$paidcourse->name}}</h4>
+                    <div class="border-top w-100 mt-3">
+                        <div class="d-flex justify-content-between p-4">
+                            <span class="text-white"><i class="fa fa-user mr-2"></i>{{$paidcourse->description}}</span>
+                            <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
+                        </div>
+                    </div>
+                    <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="{{route('single.paidcourse',$paidcourse->id)}}">Course Detail</a>
+                    </div>
+                </div>
+            </div>
+       
+        
+            @endforeach
+            </div>
+            
+        
 
 
 
-<div class="untree_co-hero overlay" style="background-image: url('images/hero-img-1-min.jpg');">
 
 
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
 
-        <div class="col-12">
 
-          <div class="row justify-content-center ">
+        <div class="row justify-content-center bg-image mx-0 mb-5">
+            <div class="col-lg-6 py-5">
+                <div class="bg-white p-5 my-5">
+                    <h1 class="text-center mb-4">30% Off For New Students</h1>
+                    <form>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="padding: 30px 20px;">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="padding: 30px 20px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
+                                        <option selected>Select A courses</option>
+                                        <option value="1">courses 1</option>
+                                        <option value="2">courses 1</option>
+                                        <option value="3">courses 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 60px;">Sign Up Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
 
-            <div class="col-lg-6 text-center ">
-              <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up" data-aos-delay="0" class="caption mb-4 d-inline-block">Watch the video</a>
 
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Education is the Mother of Leadership</h1>
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
-
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Instructors</h6>
+                <h1 class="display-4">Meet Our Instructors</h1>
             </div>
 
 
-          </div>
 
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="/uploads/img/team-1.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="/uploads/img/team-2.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="/uploads/img/team-3.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="/uploads/img/team-4.jpg" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">Instructor Name</h5>
+                        <p class="mb-2">Web Design & Development</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-  </div> <!-- /.untree_co-hero -->
-
- <div class="services-section">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-
-  
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
-          <figure class="img-wrap-2">
-            <img src="images/teacher-min.jpg" alt="Image" class="img-fluid">
-            <div class="dotted"></div>
-          </figure>
-
-        </div>
-      </div>
     </div>
-  </div>
+    <!-- Team End -->
+
+    
+    
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative mb-5">
+                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Books</h6>
+                <h1 class="display-4">Available </h1>
+            </div>
 
 
 
-  <div class="untree_co-section">
-    <div class="container"> 
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">We Have Best Education</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature">
-            <span class="uil uil-music"></span>
-            <h3>Music Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-calculator-alt"></span>
-            <h3>Math Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-book-open"></span>
-            <h3>English Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay=100">
-          <div class="feature">
-            <span class="uil uil-book-alt"></span>
-            <h3>Reading for Kids</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-history"></span>
-            <h3>History Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-headphones"></span>
-            <h3>Music</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.untree_co-section -->
-
-
-<div class="untree_co-section">
-
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mr-auto mb-5 mb-lg-0"  data-aos="fade-up" data-aos-delay="0">
-          <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid">
-        </div>
-        <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="line-bottom mb-4">Why Choose Us</h3>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-
-          <div class="custom-accordion" id="accordion_1">
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Good Teachers and Staffs</button>
-              </h2>
-
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            @foreach ($books as $book)
+                <div class="team-item">
+                    <img class="img-fluid w-100" src="{{url('/uploads/'.$book->logo)}}" alt="">
+                    <div class="bg-light text-center p-4">
+                        <h5 class="mb-3">{{$book->name}}</h5>
+                        <p class="mb-2">{{$book->description}}</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div class="w-100 bg-white text-center p-4" >
+                        <a class="btn btn-primary" href="{{route('single.book',$book->id)}}"> Detail</a>
                     </div>
-                    <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Good Characters</button>
-              </h2>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                  </div>
+                
+                    @endforeach
                 </div>
-              </div>
-            </div> <!-- .accordion-item -->
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Children are Safe</button>
-              </h2>
-
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <div class="accordion-img mr-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div>
-                    <div>
-                      <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                      <p>Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                    </div>
-                  </div>
-
                 </div>
-              </div>
+                    </div>
 
-            </div> <!-- .accordion-item -->
 
-          </div>
 
+
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid bg-image py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Testimonial</h6>
+                        <h1 class="display-4">What Say Our Students</h1>
+                    </div>
+                    <p class="m-0">Dolor est dolores et nonumy sit labore dolores est sed rebum amet, justo duo ipsum sanctus dolore magna rebum sit et. Diam lorem ea sea at. Nonumy et at at sed justo est nonumy tempor. Vero sea ea eirmod, elitr ea amet diam ipsum at amet. Erat sed stet eos ipsum diam</p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="owl-carousel testimonial-carousel">
+                        <div class="bg-white p-5">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
+                            <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                                <img class="img-fluid mr-4" src="/uploads/img/testimonial-2.jpg" alt="">
+                                <div>
+                                    <h5>Student Name</h5>
+                                    <span>Web Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
+                            <div class="d-flex flex-shrink-0 align-items-center mt-4">
+                                <img class="img-fluid mr-4" src="/uploads/img/testimonial-1.jpg" alt="">
+                                <div>
+                                    <h5>Student Name</h5>
+                                    <span>Web Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div> <!-- /.untree_co-section -->
-  @endsection
+    <!-- Testimonial Start -->
 
 
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="bg-light d-flex flex-column justify-content-center px-5" style="height: 450px;">
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Our Location</h4>
+                                <p class="m-0">123 Street, New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-phone-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Call Us</h4>
+                                <p class="m-0">+012 345 6789</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-envelope text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Email Us</h4>
+                                <p class="m-0">info@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="section-title position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
+                        <h1 class="display-4">Send Us A Message</h1>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
 
-
-
-
-
-
-
-
- 
- 
+@endsection

@@ -1,72 +1,98 @@
-<nav class="site-nav mb-5">
-    <div class="pb-2 top-bar mb-3">
-      <div class="container">
-        <div class="row align-items-center">
 
-          <div class="col-6 col-lg-9">
-            <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span class="d-none d-lg-inline-block">Have a questions?</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span class="d-none d-lg-inline-block">10 20 123 456</span></a> 
-            <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span class="d-none d-lg-inline-block">info@mydomain.com</span></a> 
-          </div>
 
-          <div class="col-6 col-lg-3 text-right">
-          @guest
-            <a href="{{route('customer.login')}}" class="small mr-3">
-              <span class="icon-lock"></span>
-              Log In
+
+
+<!-- Topbar Start -->
+<!-- <div class="container-fluid bg-dark">
+        <div class="row py-2 px-lg-5">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center text-white">
+                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                    <small class="px-3">|</small>
+                    <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-white px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a href="index.html" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>KnowledgeNet</h1>
             </a>
-            <a href="{{route('customer.registration')}}" class="small">
-              <span class="icon-person"></span>
-              Register
-            </a>
-            @endguest
-            @auth
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="{{route('mycourse')}}" class="nav-item nav-link">My Courses</a>
+                    <a href="{{route('courses')}}" class="nav-item nav-link">All Courses</a>
+                    <a href="{{route('books')}}" class="nav-item nav-link">Books</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="detail.html" class="dropdown-item">Course Detail</a>
+                            <a href="feature.html" class="dropdown-item">Our Features</a>
+                            <a href="team.html" class="dropdown-item">Instructors</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+               
+                
+                                
+                           
+
+                <a class="btn btn-outline-dark" href="{{route('cart.view')}}">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">
+                                @if(session()->has('vcart'))
+                                    {{ count(session()->get('vcart')) }}
+                                @else
+                                0
+                                @endif
+                            </span>
+                        </a>
+                  
+                @guest
+                <a href="{{route('customer.login')}}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Log In</a>
+                <a href="{{route('customer.registration')}}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Registration</a>
+                @endguest
+                @auth
                 <a href="{{route('customer.logout')}}">Logout</a>|
-                <a href="{{route('profile.view')}}">Profile</a>
+                <a href="{{route('profile.view')}}">Profile</a>|
+                <p class="text-muted font-size-sm">{{auth()->user()->role}}</p>
                 @endauth
 
-          </div>
-
-        </div>
-      </div>
+            </div>
+        </nav>
     </div>
-    <div class="sticky-nav js-sticky-header">
-      <div class="container position-relative">
-        <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+    <!-- Navbar End -->
 
-          <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li class="has-children">
-              <a href="#">Dropdown</a>
-              <ul class="dropdown">
-                <li><a href="elements.html">Elements</a></li>
-                <li class="has-children">
-                  <a href="#">Menu Two</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Sub Menu One</a></li>
-                    <li><a href="#">Sub Menu Two</a></li>
-                    <li><a href="#">Sub Menu Three</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Menu Three</a></li>
-              </ul>
-            </li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-
-          <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
-
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </nav>
-  

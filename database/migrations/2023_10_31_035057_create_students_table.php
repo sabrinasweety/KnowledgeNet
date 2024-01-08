@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->integer('paidcourse_id');
-            $table->integer('teacher_id');
+           
             $table->string('name');
+            $table->string('email')->unique();
             
-            $table->text('description')->nullable();
+            
             $table->text('image')->nullable();
             $table->string('status')->default('active');
           

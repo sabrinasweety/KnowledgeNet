@@ -12,4 +12,11 @@ class Book extends Model
     public function student(){
         return $this->belongsTo(Student::class);
 }
+public function getBookNameAttribute() {
+    return $this->name;
+}
+
+public function getBookPdfAttribute() {
+    return $this->pdf;
+}
 }

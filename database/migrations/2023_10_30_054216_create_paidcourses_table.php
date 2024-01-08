@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('paidcourses', function (Blueprint $table) {
             $table->id();
+            $table->integer('teacher_id');
             $table->string('name');
-           
+            $table->string('link');
+            $table->double('price');
             $table->text('description')->nullable();
+            $table->text('image')->nullable();
+            $table->string('status')->default('active');
+           
+            
             
             $table->timestamps();
         });

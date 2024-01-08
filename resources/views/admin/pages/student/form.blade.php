@@ -11,18 +11,10 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
-  <div class="form-group">
-    <label for="">Select Paidcourse id:</label>
-    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="paidcourse_id">
+ 
    
 
-   </div>
-   <div class="form-group">
-    <label for="">Select Teacher id:</label>
-    <input type="text" class="form-control" id=""  placeholder="Enter Name" name="teacher_id">
-    
    
-  </div>
 
   <div class="form-group">
     <label for="">Upload Image: </label>
@@ -30,9 +22,9 @@
   </div>
 
   <div class="form-group">
-    <label for="">Description</label>
-    <textarea class="form-control" class="form-control" id="" name="student_description" cols="10" rows="5"></textarea>
-    @error('student_description')
+    <label for="">Email</label>
+    <input type="string"  class="form-control" id="" name="student_email" cols="10" rows="5">
+    @error('student_email')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 

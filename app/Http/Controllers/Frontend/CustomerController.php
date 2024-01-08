@@ -29,11 +29,11 @@ public function profileedit(){
 
 
 public function profileupdate(Request $request){
-//dd($request->all());
+
 $validate=Validator::make($request->all(),[
   'name'=>'required|min:2',
   'email'=>'required|email',
-  'role'=>'required'
+  
     
         ]);  
    if($validate->fails()){
@@ -48,7 +48,7 @@ if($user){
 $user->update([
   'name'=>$request->name,
       'email'=>$request->email,
-      'role'=>'customer',
+      
       'password'=>bcrypt($request->password),
 ]);
 
@@ -70,7 +70,7 @@ return redirect()->back();
     User::create([
         'name'=>$request->name,
             'email'=>$request->email,
-            'role'=>'customer',
+            'role'=>'student',
             'password'=>bcrypt($request->password),
 
 
@@ -78,7 +78,7 @@ return redirect()->back();
 
     ]);
     notify()->success('Registration Successful!!');
-    return redirect()->back();
+    return redirect()->route('customer.login');
   }
 
   public function login()
@@ -87,9 +87,9 @@ return redirect()->back();
   }
   public function dologin(Request $request)
   {
-    //dd($request->all());
+    
 $credentials=$request->except('_token');
-//dd($credentials);
+
 if(auth()->attempt($credentials)){
     notify()->success('successfully logged in');
     return redirect()->route('home');
@@ -101,6 +101,6 @@ return redirect()->back();
   public function logout(){
     auth()->logout();
     notify()->success('succesfully logout');
-    return redirect()->route('home');
+    return redirect()->back();
   }
 }
