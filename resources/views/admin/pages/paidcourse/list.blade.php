@@ -7,7 +7,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Paidcourse Name</th>
-      <th scope="col">Teacher Name</th>
+     
       <th scope="col">Price</th>
       <th scope="col">Image</th>
       <th scope="col">Description</th>
@@ -20,8 +20,9 @@
     <tr>
       <th scope="row">{{ $paidcourse->id }}</th>
       <td>{{$paidcourse->name}}</td>
-      <td>{{$paidcourse->teacher_id}}</td>
+      
       <td>{{$paidcourse->price}}</td>
+      
       <td>
       <img width="20%" src="{{url('/uploads/'.$paidcourse->image)}}" alt=""></td>
       <td>{{$paidcourse->description}}</td>

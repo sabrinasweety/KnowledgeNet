@@ -22,17 +22,7 @@
 
   </div>
 
-  <div class="form-group">
-    <label for="">Select Teacher:</label>
-   <select required class="form-control" name="teacher_id" id="">
-
-    @foreach ($teachers as $teacher)
-    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-    @endforeach
-
-   </select>
-  </div>
-
+  
   
   
   <div class="form-group">

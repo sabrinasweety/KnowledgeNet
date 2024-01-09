@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 
 class CustomerController extends Controller
@@ -28,40 +29,39 @@ public function profileedit(){
 
 
 
-public function profileupdate(Request $request){
+public function profileupdate(Request $request) {
+  $validate = Validator::make($request->all(), [
+      'name' => 'required|min:2',
+      'email' => 'required|email',
+  ]);  
 
-$validate=Validator::make($request->all(),[
-  'name'=>'required|min:2',
-  'email'=>'required|email',
+  if ($validate->fails()) {
+      notify()->error('Error');
+      return redirect()->back();
+  }
+
+  $user = User::find(auth()->user()->id);
   
-    
-        ]);  
-   if($validate->fails()){
-  notify()->error('vul hoise');
- return redirect()->back();
+  if ($user) {
+      $userData = [
+          'name' => $request->name,
+          'email' => $request->email,
+      ];
+
+      // Check if a new password is provided
+      if (!empty($request->password)) {
+          $userData['password'] = bcrypt($request->password);
+      }
+
+      $user->update($userData);
+
+      notify()->success('Updated successfully');
+      return redirect()->back();
+  }
 }
 
 
-$user=User::find(auth()->user()->id);
-if($user){
 
-$user->update([
-  'name'=>$request->name,
-      'email'=>$request->email,
-      
-      'password'=>bcrypt($request->password),
-]);
-
-notify()->success('updated successfully');
-return redirect()->back();
-
-
-
-
-}
-
-
-}
 
 
 

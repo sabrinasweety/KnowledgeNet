@@ -13,16 +13,16 @@ class PaidcourseController extends Controller
     public function list()
 
 
-    {  $paidcourses=Paidcourse::with(['teacher'])->paginate(10);
+    {  $paidcourses=Paidcourse::paginate(10);
        // $paidcourses=Paidcourse::paginate(2);
-        return view('admin.pages.paidcourse.list',compact("paidcourses"));
+        return view('admin.pages.paidcourse.list',compact('paidcourses'));
     }
 
     public function view($id){
 
         $paidcourse=Paidcourse::find($id);
-        $teachers=Teacher::all();
-        return view('admin.pages.paidcourse.view',compact('teachers','paidcourse'));
+        
+        return view('admin.pages.paidcourse.view',compact('paidcourse'));
     }
     public function delete($id){
 
@@ -38,10 +38,9 @@ class PaidcourseController extends Controller
     {
       $paidcourse=Paidcourse::find($id);
 
-      $teachers=Teacher::all();
-      
+   
 
-      return view('admin.pages.paidcourse.edit',compact('teachers','paidcourse'));
+      return view('admin.pages.paidcourse.edit',compact('paidcourse'));
      
     }
 
@@ -61,14 +60,17 @@ class PaidcourseController extends Controller
               $file->storeAs('/uploads',$fileName);
     
           }
+         
+          
 
           $paidcourse->update([
             'teacher_id'=>$request->teacher_id,
                 'name'=>$request->paidcourse_name,
                 'price'=>$request->paidcourse_price,
                 'description'=>$request->paidcourse_description,
+                'image'=>$fileName,
                 
-                'image'=>$fileName
+              
                 
           ]);
 
@@ -89,11 +91,18 @@ class PaidcourseController extends Controller
         return view('admin.pages.paidcourse.form',compact('teachers'));
     }
     public function store(Request $request)
-{ $validate=Validator::make($request->all(),[
-            'teacher_id'=>'required',
+
+{ 
+  //dd($request->all());
+    
+    $validate=Validator::make($request->all(),[
+            
             
             'paidcourse_name'=>'required',
             'paidcourse_price'=>'required|numeric|min:10',
+            
+           
+        
     //return dd($request->all());
 ]);
 
@@ -110,19 +119,21 @@ if($validate->fails())
           $file->storeAs('/uploads',$fileName);
 
       }
+     
+   
 
 
 
 
     Paidcourse::create(
         [
-            'teacher_id'=>$request->teacher_id,
+            
                 'name'=>$request->paidcourse_name,
                 'price'=>$request->paidcourse_price,
-                'link'=>$request->paidcourse_link,
+               // 'link'=>$linkName,
+               'link'=>$request->paidcourse_link,
                 'description'=>$request->paidcourse_description,
-
-                
+               
                 'image'=>$fileName
         ]
     );

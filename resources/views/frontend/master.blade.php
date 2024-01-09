@@ -41,7 +41,10 @@
 
 
     <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
+
+    <!-- <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;"> -->
+    <div class="container-fluid position-relative overlay-top overlay-bottom bg-dark text-white-50 py-5" style="margin-top: 90px;">
+    <!-- <div class="jumbotron jumbotron-fluid position-relative overlay-bottom bg-danger" style="margin-bottom: 90px;"> -->
         <div class="container text-center my-5 py-5">
             <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
             <h1 class="text-white display-1 mb-5">Education Courses</h1>
@@ -58,7 +61,7 @@
         </div>
         <input type="text" class="form-control" placeholder="Enter your query" name="query">
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <button class="btn btn-primary"  type="submit">Search</button>
         </div>
     </div>
                     </form>
@@ -79,11 +82,6 @@
     <!-- About End -->
 
 
-    <!-- Feature Start -->
-    
-    <!-- Feature Start -->
-
-
     <!-- Courses Start -->
     
         @yield('content')
@@ -92,20 +90,7 @@
     <!-- Courses End -->
 
 
-    <!-- Team Start -->
     
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    
-    <!-- Testimonial Start -->
-
-
-    <!-- Contact Start -->
-   
-    <!-- Contact End -->
-
 
 
     

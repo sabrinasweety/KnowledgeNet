@@ -19,4 +19,17 @@ public function getBookNameAttribute() {
 public function getBookPdfAttribute() {
     return $this->pdf;
 }
+public function orders() {
+    return $this->hasMany(Order::class, 'order_id','id');
+}
+// public function orderdetails() {
+//     return $this->hasMany(OrderDetails::class, 'orderdetails_id','id');
+// }
+public function orderDetails()
+
+{
+
+    return $this->hasMany(OrderDetails::class);
+
+}
 }

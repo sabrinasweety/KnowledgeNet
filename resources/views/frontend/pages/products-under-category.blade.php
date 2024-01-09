@@ -38,7 +38,7 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('add.toCart',$book->id)}}">Add to cart</a></div>
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('buy.now',$book->id)}}">Buy Now</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{route('cart.view',$book->id)}}">Buy Now</a></div>
                             </div>
                         </div>
                     </div>   

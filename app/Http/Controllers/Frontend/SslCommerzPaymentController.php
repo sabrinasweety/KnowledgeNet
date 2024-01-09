@@ -159,7 +159,7 @@ class SslCommerzPaymentController extends Controller
                session()->forget('vcart');
                notify()->success('Payment Successful');
                
-               return redirect()->route('home');
+               return redirect()->route('paymentinfo',$tran_id);
                
             }
 

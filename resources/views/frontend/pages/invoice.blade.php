@@ -2,34 +2,51 @@
 
 @section('content')
 <div class="container mt-4 print-content"> <!-- Ensure print-content class wraps the content -->
-    <div class="card">
-        <div class="card-header">
-            <h3>Order Details</h3>
-        </div>
-        <div class="card-body">
-            @if($order)
-            <div class="mb-3">
-                <strong>Transaction ID:</strong> {{ $transactionId }}
-            </div>
-            <div class="mb-3">
-                <strong>Book Name:</strong> {{ $firstOrderDetailBookName }}
-            </div>
-            @if($firstOrderDetailBookPdf)
-            <div class="mb-3">
-                <strong>Book PDF:</strong>
-                <a href="{{ asset('/uploads/pdf/' . $firstOrderDetailBookPdf) }}" download>Download PDF</a>
-            </div>
-            @else
-            <div class="mb-3">
-                No PDF available
-            </div>
-            @endif
+   
 
-            @else
-            <div class="alert alert-danger" role="alert">
-                No order details found.
+
+<<div class="container mt-5">
+        <h2>Transaction ID: {{ $transactionId }}</h2>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Order Details</h3>
             </div>
-            @endif
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach ($orderDetails as $orderDetail)
+                        <li class="list-group-item">
+                            Book: {{ $orderDetail->book->name }} | Quantity: {{ $orderDetail->quantity }} | Subtotal: {{ $orderDetail->subtotal }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Ordered Books</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    @foreach ($books as $book)
+                        <li class="list-group-item">
+                            <strong>Name:</strong> {{ $book['name'] }} |
+                            <strong>PDF:</strong> <a href="{{ $book['pdf'] }}">Download PDF</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Total Price: {{ $totalPrice }}.BDT</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

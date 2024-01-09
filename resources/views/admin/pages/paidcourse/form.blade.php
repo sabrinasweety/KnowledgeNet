@@ -18,17 +18,7 @@
 
   </div>
 
-  <div class="form-group">
-    <label for="">Select Teacher:</label>
-   <select required class="form-control" name="teacher_id" id="">
-
-    @foreach ($teachers as $teacher)
-    <option value="{{$teacher->id}}">{{$teacher->name}}</option>
-    @endforeach
-
-   </select>
-  </div>
-
+  
   
   
   <div class="form-group">
@@ -55,16 +45,11 @@
     <label for="">Upload Image: </label>
     <input type="file" class="form-control" name="image">
   </div>
-  <div class="form-group">
-    <label for="">Enter Link: </label>
-    <input required type="url" class="form-control" placeholder="Enter course link" name="paidcourse_link">
-
-    
-    @error('paidcourse_link')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-    
-  </div>
+  <div>
+        <label for="paidcourse_link">Course Link:</label>
+        <input type="string" id="link"  placeholder="Enter link" name="paidcourse_link" required>
+    </div>
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

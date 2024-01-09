@@ -12,8 +12,18 @@ class Paidcourse extends Model
 
 
 
-    public function teacher()
-    {
-        return $this->belongsTo(Teacher::class);    
+    public function getPaidcourseNameAttribute() {
+        return $this->name;
     }
+    
+    public function getPaidcourseLinkAttribute() {
+        return $this->link;
+    }
+    public function enrolls() {
+        return $this->hasMany(Enroll::class, 'paidcourses_id','id');
+    }
+    // public function enroll()
+    // {
+    //     return $this->hasOne(Enroll::class);
+    // }
 }

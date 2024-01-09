@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[FrontendHomeController::class, 'home'])->name('home');
 Route::get('/paidcourse/courses',[FrontendPaidcourseController::class, 'courses'])->name('courses');
+Route::get('/paidcourse/paymentinfo/{id}',[FrontendPaidcourseController::class, 'paymentinfo'])->name('paymentinfo');
 Route::get('/books', [FrontendBookController::class, 'books'])->name('books');
 Route::get('/search-course',[FrontendHomeController::class,'search'])->name('paidcourse.search');
 Route::get('/single-paidcourse/{id}', [FrontendPaidcourseController::class, 'singlePaidcourseView'])->name('single.paidcourse');

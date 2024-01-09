@@ -71,7 +71,7 @@ public function enrollpaidcourse(Request $request,$paidcourseId)
           // Initiating the payment
           $this->payment($enrollData);
        
-          session()->forget('vcart');
+          //session()->forget('vcart');
     
         notify()->success(' Enrolled successfully.');
         return redirect()->back();
@@ -160,4 +160,68 @@ public function courses()
 }
 
 
+public function paymentinfo($transactionId)
+{
+   // $order = Enroll::where('transaction_id', $transactionId)->first();
+
+//     if ($order) {
+//         // Retrieve order details associated with the order
+//         $orderDetails = Enroll::where('paidcourses_id', $order->id)->get();
+// //dd( $orderDetails);
+//         if ($orderDetails->isNotEmpty()) {
+//             // Accessing the first order detail to get book details
+//             $firstOrderDetail = $orderDetails->first();
+            
+//             // Accessing book details from the first order detail
+//             $firstOrderDetailPaidcourseName = $firstOrderDetail->paidcourse->paidcourses_name;
+//             dd( $firstOrderDetailPaidcourseName);
+             
+           
+//             $firstOrderDetailPaidcourseLink = $firstOrderDetail->paidcourse->paidcourses_link;
+            
+//             // Accessing price and quantity from OrderDetail
+//             $price = $firstOrderDetail->price;
+           
+
+//             // Accessing transaction_id from Order
+//             $transactionId = $order->transaction_id;
+//         } else {
+//             // Set default values if no order details found
+//             $firstOrderDetailPaidcourseName = null;
+//             $firstOrderDetailPaidcourseLink = null;
+//             $transactionId = null;
+//             $price = null;
+          
+//         }
+//     } else {
+//         // Set default values if no order found
+//         $firstOrderDetailPaidcourseName = null;
+//             $firstOrderDetailPaidcourseLink = null;
+//             $transactionId = null;
+//             $price = null;
+          
+//     }
+$enroll = Enroll::where('transaction_id', $transactionId)->first();
+
+if ($enroll) {
+    $paidcourseId = $enroll->paidcourses_id;
+    $paidcourse = Paidcourse::find($paidcourseId);
+
+    if ($paidcourse) {
+        $paidcourse_name = $paidcourse->name;
+        $paidcourse_link = $paidcourse->link;
+        $paidcourse_price = $paidcourse->price;
+        $transactionId = $enroll->transaction_id;
+
+        // If you get a valid $paidcourse object here, it means the issue might be with the relationship loading or definition
+        
+    } else {
+        // If $paidcourse is null, it means there's no associated Paidcourse for the Enroll record
+        dd('No associated Paidcourse found for this Enroll record.');
+    }
+} else {
+    dd('No Enroll record found for the given transaction ID.');
+}
+    return view('frontend.pages.paymentinfo', compact('enroll', 'paidcourse', 'paidcourse_name','paidcourse_link','transactionId', 'paidcourse_price'));
+}
 }

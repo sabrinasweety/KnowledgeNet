@@ -3,6 +3,12 @@
 @section('content')
 
 <div class="container wrapper">
+
+    @if (!auth()->check())
+    <div class="alert alert-warning">
+            Please <a href="{{ route('customer.login') }}">Login</a> or <a href="{{ route('customer.registration') }}">Registration</a> to proceed to checkout.
+        </div>
+        @else
     <form action="{{route('order.place')}}" method="post">
         @csrf
     <div class="row">
@@ -85,7 +91,7 @@
         </div>
     </div>
     </form>
-
+    @endif
 </div>
 
 @endsection
