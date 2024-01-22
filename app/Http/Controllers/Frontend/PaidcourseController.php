@@ -220,7 +220,7 @@ if ($enroll) {
         dd('No associated Paidcourse found for this Enroll record.');
     }
 } else {
-    dd('No Enroll record found for the given transaction ID.');
+    ('No Enroll record found for the given transaction ID.');
 }
     return view('frontend.pages.paymentinfo', compact('enroll', 'paidcourse', 'paidcourse_name','paidcourse_link','transactionId', 'paidcourse_price'));
 }

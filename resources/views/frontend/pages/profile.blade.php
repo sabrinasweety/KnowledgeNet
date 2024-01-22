@@ -13,7 +13,7 @@
           <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-              <li class="breadcrumb-item"><a href="">User</a></li>
+             
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
           </nav>
@@ -63,12 +63,11 @@
                   <hr>
                   
                   
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{route('profile.edit')}}">Edit</a>
-                    </div>
-                  </div>
+                  
                 </div>
+              </div>
+              </div>
+              </div>
               </div>
               @endsection
 

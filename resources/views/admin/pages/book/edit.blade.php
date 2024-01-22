@@ -12,27 +12,8 @@
    @enderror
 
   </div>
-  <div class="form-group">
-    <label for="">Logo</label>
-    <input type="file" class="form-control" id=""  placeholder="Enter Name" name="book_logo">
-   
-  </div>
-  <div class="form-group">
-    <label for="">Student_ID</label>
-    <input type="number" class="form-control" id=""  placeholder="Enter Name" name="student_id">
-    @error('student_id')
-    <div class="alert alert-danger">{{$message}}</div>
-    @enderror
-   
-  </div>
-  <div class="form-group">
-    <label for="">Purchase_ID</label>
-    <input type="number" class="form-control" id=""  placeholder="Enter Name" name="purchase_id">
-    @error('purchase_id')
-    <div class="alert alert-danger">{{$message}}</div>
-    @enderror
-   
-  </div>
+  
+  
   <div class="form-group">
     <label for="">Author Name</label>
     <input type="text" class="form-control" id=""  placeholder="Enter Name" name="author_name">
@@ -40,7 +21,7 @@
   </div>
   <div class="form-group">
     <label for="">Price</label>
-    <input type="text" class="form-control" id=""  placeholder="Enter price" name="price">
+    <input type="integer" class="form-control" id=""  placeholder="Enter price" name="book_price">
    
   </div>
   <div class="form-group">

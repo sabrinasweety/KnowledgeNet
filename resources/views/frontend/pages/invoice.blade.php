@@ -5,7 +5,7 @@
    
 
 
-<<div class="container mt-5">
+<div class="container mt-5">
         <h2>Transaction ID: {{ $transactionId }}</h2>
 
         <div class="card mb-4">
@@ -32,7 +32,7 @@
                     @foreach ($books as $book)
                         <li class="list-group-item">
                             <strong>Name:</strong> {{ $book['name'] }} |
-                            <strong>PDF:</strong> <a href="{{ $book['pdf'] }}">Download PDF</a>
+                            
                         </li>
                     @endforeach
                 </ul>

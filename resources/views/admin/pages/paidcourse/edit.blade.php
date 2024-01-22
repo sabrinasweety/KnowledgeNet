@@ -26,13 +26,10 @@
   
   
   <div class="form-group">
-    <label for="">Description</label>
-    <textarea value="{{$paidcourse->description}}" name="description"         class="form-control" id="" input="description" cols="10" rows="5"></textarea>
-    @error('description')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-
+  <label for="">Enter Product Description:</label>
+   <textarea class="form-control" placeholder="Enter product short description" name="paidcourse_description" id="" cols="30" rows="5">{{$paidcourse->description}}</textarea>
   </div>
+  
 
   <div class="form-group">
     <label for="">Enter Fees: </label>
@@ -45,10 +42,7 @@
     
   </div>
 
-  <div class="form-group">
-    <label for="">Upload Image: </label>
-    <input value="{{$paidcourse->image}}" type="file" class="form-control" name="image">
-  </div>
+  
  
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

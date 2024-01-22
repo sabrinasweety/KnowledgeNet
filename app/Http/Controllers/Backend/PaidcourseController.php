@@ -7,13 +7,15 @@ use App\Models\Paidcourse;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\QueryException;
 
 class PaidcourseController extends Controller
 {
-    public function list()
+    public function list(){
+    $paidcourses=Paidcourse::paginate(10);
 
 
-    {  $paidcourses=Paidcourse::paginate(10);
+    // {  $paidcourses=Paidcourse::orderBy('name', 'desc')->paginate(10);
        // $paidcourses=Paidcourse::paginate(2);
         return view('admin.pages.paidcourse.list',compact('paidcourses'));
     }
@@ -26,12 +28,25 @@ class PaidcourseController extends Controller
     }
     public function delete($id){
 
-        $paidcourse=Paidcourse::find($id);
-        if($paidcourse){
-            $paidcourse->delete($id);
-            notify()->success(' Deleted Successfully.');
-      return redirect()->back();
+      try {
+        $paidcourse = Paidcourse::find($id);
+
+        if ($paidcourse) {
+            $paidcourse->delete();
+            notify()->success('Deleted Successfully.');
+        } else {
+            notify()->warning('Course not found.');
         }
+    } catch (QueryException $e) {
+        // Check if the exception is due to a foreign key constraint violation
+        if ($e->errorInfo[1] == 1451) {
+            notify()->error('Cannot delete the course. It has related records in enrolls tables.');
+        } else {
+            notify()->error('An error occurred while deleting the course.');
+        }
+    }
+
+    return redirect()->back();
     }
 
     public function edit($id)
@@ -64,7 +79,7 @@ class PaidcourseController extends Controller
           
 
           $paidcourse->update([
-            'teacher_id'=>$request->teacher_id,
+            
                 'name'=>$request->paidcourse_name,
                 'price'=>$request->paidcourse_price,
                 'description'=>$request->paidcourse_description,
@@ -76,9 +91,9 @@ class PaidcourseController extends Controller
 
           notify()->success('Paidcourse updated successfully.');
           return redirect()->back();
-        }
+        
     }
-
+  }
 
 
 
@@ -99,6 +114,7 @@ class PaidcourseController extends Controller
             
             
             'paidcourse_name'=>'required',
+           
             'paidcourse_price'=>'required|numeric|min:10',
             
            

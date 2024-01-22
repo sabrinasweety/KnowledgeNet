@@ -45,7 +45,7 @@ class CartController extends Controller
             ];
 
             session()->put('vcart',$cart);
-            notify()->success('Product added to cart successfully.');
+            notify()->success('Book added to cart successfully.');
             return redirect()->back();
 
             }
@@ -63,7 +63,7 @@ class CartController extends Controller
             ];
 
             session()->put('vcart',$newCart);
-            notify()->success('Product added to cart successfully.');
+            notify()->success('Book added to cart successfully.');
             return redirect()->back();
 
         }

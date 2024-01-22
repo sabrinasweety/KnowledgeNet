@@ -140,12 +140,16 @@ Route::post('/teacher/store',[TeacherController::class,'store'])->name('teacher.
 Route::get('/student/list',[StudentController::class,'list'])->name('student.list');
 Route::get('/student/form',[StudentController::class,'createform'])->name('student.form');
 Route::post('/student/store',[StudentController::class,'store'])->name('student.store');
+Route::get('/student/delete/{id}',[StudentController::class,'delete'])->name('student.delete');
+Route::get('/orderpayment/list',[StudentController::class,'orderpaymentlist'])->name('orderpayment.list');
+Route::get('/orderpayment/report/{id}',[StudentController::class,'orderpaymentreport'])->name('orderpayment.report');
 
 
 Route::get('/enroll/list',[StudentController::class,'enrolllist'])->name('enroll.list');
 Route::get('/enroll/form',[StudentController::class,'enrollform'])->name('enroll.form');
 Route::post('/enroll/store',[StudentController::class,'enrollstore'])->name('enroll.store');
 Route::get('/book/list',[BookController::class,'list'])->name('book.list');
+
 Route::get('/book/view/{id}',[BookController::class,'view'])->name('book.view');
 Route::get('/book/delete/{id}',[BookController::class,'delete'])->name('book.delete');
 Route::get('/book/edit/{id}',[BookController::class,'edit'])->name('book.edit');

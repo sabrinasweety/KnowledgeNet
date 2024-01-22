@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\QueryException;
 
 
 class CustomerController extends Controller
@@ -66,11 +67,12 @@ public function profileupdate(Request $request) {
 
 
   public function store(Request $request){
+    try {
     //dd($request->all());
     User::create([
         'name'=>$request->name,
             'email'=>$request->email,
-            'role'=>'student',
+            'rol e'=>'student',
             'password'=>bcrypt($request->password),
 
 
@@ -80,6 +82,22 @@ public function profileupdate(Request $request) {
     notify()->success('Registration Successful!!');
     return redirect()->route('customer.login');
   }
+  catch (QueryException $e) {
+
+    if ($e->errorInfo[1] == 1062) {
+
+        notify()->error('Email address already exists');
+
+        return redirect()->back();
+
+    }
+
+
+    throw $e;
+
+}
+
+}
 
   public function login()
   {

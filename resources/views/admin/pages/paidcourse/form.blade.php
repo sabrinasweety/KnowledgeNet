@@ -23,7 +23,7 @@
   
   <div class="form-group">
     <label for="">Description</label>
-    <textarea name="description"         class="form-control" id="" input="description" cols="10" rows="5"></textarea>
+    <textarea name="paidcourse_description"  class="form-control" id="" input="description" cols="10" rows="5"></textarea>
     @error('description')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror

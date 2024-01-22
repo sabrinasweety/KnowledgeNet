@@ -1,16 +1,17 @@
 @extends('admin.master')
 @section('content')
 <h1>Students</h1>
-<a href="{{route('student.form')}}" class='btn btn-primary'>Add Student</a>
+<!-- <a href="{{route('student.form')}}" class='btn btn-primary'>Add Student</a> -->
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Student_Name</th>
+      <th scope="col">Student_Email</th>
      
-      <th scope="col">Student_image</th>
       
-      <th scope="col">Student_status</th>
+      
+      
     
 
     </tr>
@@ -21,15 +22,12 @@
     <th scope="row">{{$key+1}}</th>
     
       <td>{{$student->name}}</td>
-      
-      <td>image here</td>
-      <td>{{$student->status}}</td>
-      <td>
-        <a class="btn btn-success" href="">View</a>
-        <a class="btn btn-success" href="">Delete</a>
-        <a class="btn btn-success" href="">Edit</a>
+      <td>{{$student->email}}</td>
+     
+   
+        
 
-      </td>
+     
       
       
     </tr>

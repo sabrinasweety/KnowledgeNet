@@ -39,14 +39,7 @@
     
   </div>
 
-  <div class="form-group">
-    <label for="">Upload Image: </label>
-    <input value="{{$paidcourse->image}}" type="file" class="form-control" name="image">
-  </div>
-  <div class="form-group">
-    <label for="">Link: </label>
-    <input value="{{$paidcourse->link}}" type="file" class="form-control" name="image">
-  </div>
+  
  
  
   

@@ -10,8 +10,8 @@
      
       <th scope="col">Price</th>
       <th scope="col">Image</th>
-      <th scope="col">Description</th>
-      <th scope="col">Status</th>
+      
+      <th scope="col">Action</th>
       
     </tr>
   </thead>
@@ -25,11 +25,12 @@
       
       <td>
       <img width="20%" src="{{url('/uploads/'.$paidcourse->image)}}" alt=""></td>
-      <td>{{$paidcourse->description}}</td>
-      <td>{{$paidcourse->status}}</td>
-      <td><a class="btn btn-success" href="{{route('paid.view',$paidcourse->id)}}">View</td>
-      <td><a class="btn btn-primary" href="{{route('paid.edit',$paidcourse->id)}}">Edit</td>
-      <td><a class="btn btn-secondary" href="{{route('paid.delete',$paidcourse->id)}}">Delete</td>
+      
+      
+      <td><a class="btn btn-success" href="{{route('paid.view',$paidcourse->id)}}">View</a>
+      <a class="btn btn-primary" href="{{route('paid.edit',$paidcourse->id)}}">Edit</a>
+      <a class="btn btn-secondary" href="{{route('paid.delete',$paidcourse->id)}}">Delete</a>
+</td>
       
     
     </tr>

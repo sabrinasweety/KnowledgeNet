@@ -16,27 +16,9 @@
     <input type="file" class="form-control" id=""  placeholder="Enter logo" name="logo">
    
   </div>
-  <div class="form-group">
-    <label for="">Book Pdf</label>
-    <input type="file" class="form-control" id=""  placeholder="Enter book pdf" name="pdf">
-   
-  </div>
-  <div class="form-group">
-    <label for="">Student_ID</label>
-    <input type="number" class="form-control" id=""  placeholder="Enter Name" name="student_id">
-    @error('student_id')
-    <div class="alert alert-danger">{{$message}}</div>
-    @enderror
-   
-  </div>
-  <div class="form-group">
-    <label for="">Purchase_ID</label>
-    <input type="number" class="form-control" id=""  placeholder="Enter Name" name="purchase_id">
-    @error('purchase_id')
-    <div class="alert alert-danger">{{$message}}</div>
-    @enderror
-   
-  </div>
+  
+ 
+  
   <div class="form-group">
     <label for="">Author Name</label>
     <input type="text" class="form-control" id=""  placeholder="Enter Name" name="author_name">

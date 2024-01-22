@@ -21,4 +21,6 @@ class CheckAdmin
     }
     notify()->error('you are not admin');
     return redirect()->route('home');
-}}
+}
+        
+}

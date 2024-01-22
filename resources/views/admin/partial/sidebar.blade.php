@@ -10,24 +10,14 @@
             Dashboard
             </a>
           </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('unpaid.list')}}">
-                  <span data-feather="file"></span>
-                  Unpaid-Courses
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="{{route('paid.list')}}">
                   <span data-feather="shopping-cart"></span>
                   Paid-Courses
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('teacher.list')}}">
-                  <span data-feather="users"></span>
-                  Teachers
-                  </a>
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link" href="{{route('student.list')}}">
                 <span data-feather="users"></span>
@@ -50,6 +40,12 @@
                 <a class="nav-link" href="{{route('enroll.list')}}">
                 <span data-feather="users"></span>
                   Enrolled Students
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('orderpayment.list')}}">
+                <span data-feather="users"></span>
+                  Order Details and Payment
                 </a>
               </li>
               
